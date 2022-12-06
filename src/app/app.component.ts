@@ -1,31 +1,22 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {SampleService} from "./sample.service";
-import {tap} from "rxjs";
+import {map, tap} from "rxjs";
+import {AuthService} from "./core/auth/services/auth.service";
+import {ICreateSessionResponse} from "./core/auth/models/models";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
+export class AppComponent implements OnInit{
   title = 'TMDB_Client';
 
   sampleData: any;
 
-  constructor(private sampleService: SampleService) {
+  constructor() {
   }
 
-  onLoadData() {
-    let url = 'list/1'; //'https://api.themoviedb.org/4/list/1';
-    this.sampleService.loadData(url)
-      .pipe(
-        tap(data => {
-          debugger;
-        })
-      )
-      .subscribe(response => {
-        debugger;
-        this.sampleData = response;
-      })
+  ngOnInit(): void {
   }
 }

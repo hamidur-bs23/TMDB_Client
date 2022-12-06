@@ -1,11 +1,15 @@
 import {NgModule} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import {HttpClientModule} from "@angular/common/http";
+import {AuthenticatedUserComponent} from "./components/authenticated-user/authenticated-user.component";
+import {HomeComponent} from "./components/home/home.component";
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    AuthenticatedUserComponent,
+    HomeComponent
+  ],
   imports: [
     CommonModule,
     FormsModule,
