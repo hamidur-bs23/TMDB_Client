@@ -33,7 +33,7 @@ export class AuthService {
     this.Logout();
     return this.CreateRequestToken().pipe(
       switchMap((requestToken: IAuthRequestTokenResponse) => {
-        return this.AuthorizeUserRequestToken(requestToken.request_token).pipe(
+        return this.AuthorizeUserRequestToken(requestToken.request_token, `${environment.api_tmdb_auth.redirect_to_url}`).pipe(
           switchMap((response) => {
             return this.CreateSession();
           }))
@@ -56,7 +56,7 @@ export class AuthService {
       );
   }
 
-  AuthorizeUserRequestToken(requestToken: string, redirect_to_url: string = `${environment.api_tmdb_auth.redirect_to_url}`) {
+  AuthorizeUserRequestToken(requestToken: string, redirect_to_url: string) {
     let url: string = `${environment.api_tmdb_auth.authorize_user_base_url}/${requestToken}?redirect_to=${redirect_to_url}`;
 
     window.open(url, '_blank');
