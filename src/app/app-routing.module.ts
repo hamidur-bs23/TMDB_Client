@@ -3,7 +3,7 @@ import { RouterModule, Routes} from '@angular/router';
 import { AuthenticatedUserComponent } from './shared/components/authenticated-user/authenticated-user.component';
 import { HomeComponent } from './modules/home/components/home/home.component';
 import {DefaultLayoutComponent} from "./layout/default/default.layout.component";
-import {EmptyLayoutComponent} from "./layout/empty/empty.layout.component";
+import {FullwidthLayoutComponent} from "./layout/fullwidth/fullwidth.layout.component";
 
 const routes: Routes = [
   {
@@ -38,7 +38,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    component: EmptyLayoutComponent,
+    component: FullwidthLayoutComponent,
     children: [
       {
         path: 'authenticated-user',

@@ -4,7 +4,7 @@ import {PopularComponent} from "./popular.component";
 
 const routes: Routes = [
   {
-    path: 'popular',
+    path: '',
     component: PopularComponent
   }
 ];

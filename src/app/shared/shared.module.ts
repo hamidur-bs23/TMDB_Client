@@ -6,6 +6,7 @@ import {MaterialModule} from "./material.module";
 import {HeaderComponent} from "./components/header/header.component";
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
 import {FooterComponent} from "./components/footer/footer.component";
+import {RouterOutlet} from "@angular/router";
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {FooterComponent} from "./components/footer/footer.component";
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    RouterOutlet,
 
   ],
   exports: [
@@ -29,6 +31,7 @@ import {FooterComponent} from "./components/footer/footer.component";
     MaterialModule,
 
     // Components
+    AuthenticatedUserComponent,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
