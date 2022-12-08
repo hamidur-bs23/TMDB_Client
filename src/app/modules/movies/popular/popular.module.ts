@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 
 import { PopularRoutingModule } from './popular-routing.module';
 import { PopularComponent } from './popular.component';
+import {PopularMovieApiService} from "../services/popular-movie.api.service";
+import {SharedModule} from "../../../shared/shared.module";
 
 
 @NgModule({
@@ -11,7 +13,11 @@ import { PopularComponent } from './popular.component';
   ],
   imports: [
     CommonModule,
-    PopularRoutingModule
+    PopularRoutingModule,
+    SharedModule
+  ],
+  providers: [
+    // PopularMovieApiService
   ]
 })
 export class PopularModule { }

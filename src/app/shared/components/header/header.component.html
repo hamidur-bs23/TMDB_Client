@@ -1,1 +1,11 @@
-<p>header works!</p>
+<mat-toolbar color="primary">
+  <span class="mx-1">TMDB Client</span>
+
+  <span class="ml-3">
+    <button mat-button [matMenuTriggerFor]="movies" class="text-sm bg-blue-400">Movie</button>
+    <mat-menu #movies="matMenu">
+      <button mat-menu-item [routerLink]="['/movie', 'popular']" class="text-sm">Popular</button>
+    </mat-menu>
+  </span>
+
+</mat-toolbar>

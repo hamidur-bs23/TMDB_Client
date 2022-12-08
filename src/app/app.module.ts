@@ -9,11 +9,22 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import {DefaultLayoutComponent} from './layout/default/default.layout.component';
 import {FullwidthLayoutComponent} from './layout/fullwidth/fullwidth.layout.component';
-import {EmptyLayoutComponent} from './layout/empty/empty.layout.component';
 
 @NgModule({
-  declarations: [AppComponent, DefaultLayoutComponent, FullwidthLayoutComponent, EmptyLayoutComponent],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule, BrowserAnimationsModule, SharedModule],
+  declarations: [
+    AppComponent,
+    DefaultLayoutComponent,
+    FullwidthLayoutComponent,
+
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
+    SharedModule,
+
+  ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,

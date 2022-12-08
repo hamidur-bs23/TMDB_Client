@@ -6,6 +6,8 @@ import {MaterialModule} from "./material.module";
 import {HeaderComponent} from "./components/header/header.component";
 import {SidebarComponent} from "./components/sidebar/sidebar.component";
 import {FooterComponent} from "./components/footer/footer.component";
+import {RouterLink, RouterOutlet} from "@angular/router";
+import {MatMenuModule} from "@angular/material/menu";
 
 @NgModule({
   declarations: [
@@ -19,6 +21,9 @@ import {FooterComponent} from "./components/footer/footer.component";
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
+    RouterOutlet,
+    RouterLink,
+
 
   ],
   exports: [
@@ -29,6 +34,7 @@ import {FooterComponent} from "./components/footer/footer.component";
     MaterialModule,
 
     // Components
+    AuthenticatedUserComponent,
     HeaderComponent,
     SidebarComponent,
     FooterComponent,
