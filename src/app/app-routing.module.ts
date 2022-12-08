@@ -22,6 +22,16 @@ const routes: Routes = [
     path: 'authenticated-user',
     component: AuthenticatedUserComponent,
   },
+  {
+    path: 'movie',
+    children:[
+      {
+        path: 'popular',
+        loadChildren: () =>
+          import('./modules/movies/popular/popular.module').then((m) => m.PopularModule),
+      }
+    ]
+  }
 ];
 
 @NgModule({
