@@ -1,11 +1,19 @@
-<mat-toolbar color="primary">
-  <span class="mx-1">TMDB Client</span>
+<mat-toolbar color="primary" class="items-center">
+  <button (click)="menuToggled.emit(true)" mat-icon-button class="flex">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="title ml-4" routerLink="/">TMDB</span>
 
-  <span class="ml-3">
-    <button mat-button [matMenuTriggerFor]="movies" class="text-sm bg-blue-400">Movie</button>
-    <mat-menu #movies="matMenu">
-      <button mat-menu-item [routerLink]="['/movie', 'popular']" class="text-sm">Popular</button>
-    </mat-menu>
-  </span>
+  <span class="spacer"></span>
 
+  <span class="welcome-text">Hello {{ user }}</span>
+
+  <button mat-icon-button [matMenuTriggerFor]="menu" class="flex ml-1">
+    <mat-icon>person_pin</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item (click)="logout()">
+      <span>Logout</span>
+    </button>
+  </mat-menu>
 </mat-toolbar>

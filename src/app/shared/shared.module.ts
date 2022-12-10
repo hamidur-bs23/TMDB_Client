@@ -4,17 +4,19 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {AuthenticatedUserComponent} from './components/authenticated-user/authenticated-user.component';
 import {MaterialModule} from "./material.module";
 import {HeaderComponent} from "./components/header/header.component";
-import {SidebarComponent} from "./components/sidebar/sidebar.component";
 import {FooterComponent} from "./components/footer/footer.component";
-import {RouterLink, RouterOutlet} from "@angular/router";
-import {MatMenuModule} from "@angular/material/menu";
+import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
+import {MenuItemComponent} from "./components/menu-item/menu-item.component";
+import {PageHeaderComponent} from "./components/page-header/page-header.component";
 
 @NgModule({
   declarations: [
     AuthenticatedUserComponent,
     HeaderComponent,
-    SidebarComponent,
-    FooterComponent
+    FooterComponent,
+    MenuItemComponent,
+    PageHeaderComponent,
+
   ],
   imports: [
     CommonModule,
@@ -23,6 +25,7 @@ import {MatMenuModule} from "@angular/material/menu";
     MaterialModule,
     RouterOutlet,
     RouterLink,
+    RouterLinkActive,
 
 
   ],
@@ -36,8 +39,9 @@ import {MatMenuModule} from "@angular/material/menu";
     // Components
     AuthenticatedUserComponent,
     HeaderComponent,
-    SidebarComponent,
     FooterComponent,
+    MenuItemComponent,
+    PageHeaderComponent,
 
   ]
 })

@@ -7,6 +7,7 @@ import {MatSidenavModule} from "@angular/material/sidenav";
 import {MatListModule} from "@angular/material/list";
 import {MatMenuModule} from "@angular/material/menu";
 import {RouterLink} from "@angular/router";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [],
@@ -18,7 +19,7 @@ import {RouterLink} from "@angular/router";
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
-
+    MatExpansionModule,
 
   ],
   exports: [
@@ -28,6 +29,7 @@ import {RouterLink} from "@angular/router";
     MatSidenavModule,
     MatListModule,
     MatMenuModule,
+    MatExpansionModule,
 
   ]
 })
