@@ -9,6 +9,8 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SharedModule} from "./shared/shared.module";
 import {DefaultLayoutComponent} from './layout/default/default.layout.component';
 import {FullwidthLayoutComponent} from './layout/fullwidth/fullwidth.layout.component';
+import {AppStoreModule} from "./store/app.store.module";
+import { StoreModule } from '@ngrx/store';
 
 @NgModule({
   declarations: [
@@ -19,11 +21,14 @@ import {FullwidthLayoutComponent} from './layout/fullwidth/fullwidth.layout.comp
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
+    AppStoreModule,
 
+    AppRoutingModule,
+
+    StoreModule.forRoot({}, {}),
   ],
   providers: [
     {
