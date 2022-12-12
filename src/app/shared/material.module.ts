@@ -8,6 +8,7 @@ import {MatListModule} from "@angular/material/list";
 import {MatMenuModule} from "@angular/material/menu";
 import {RouterLink} from "@angular/router";
 import {MatExpansionModule} from "@angular/material/expansion";
+import {MatCardModule} from "@angular/material/card";
 
 @NgModule({
   declarations: [],
@@ -20,6 +21,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatListModule,
     MatMenuModule,
     MatExpansionModule,
+    MatCardModule,
 
   ],
   exports: [
@@ -30,6 +32,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     MatListModule,
     MatMenuModule,
     MatExpansionModule,
+    MatCardModule,
 
   ]
 })

@@ -1,0 +1,47 @@
+{
+  "page": 1,
+  "results": [
+    {
+      "adult": false,
+      "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
+      "genre_ids": [
+        28,
+        14,
+        878
+      ],
+      "id": 436270,
+      "original_language": "en",
+      "original_title": "Black Adam",
+      "overview": "Nearly 5,000 years after he was bestowed with the almighty powers of the Egyptian gods—and imprisoned just as quickly—Black Adam is freed from his earthly tomb, ready to unleash his unique form of justice on the modern world.",
+      "popularity": 5120.041,
+      "poster_path": "/pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg",
+      "release_date": "2022-10-19",
+      "title": "Black Adam",
+      "video": false,
+      "vote_average": 7.3,
+      "vote_count": 2612
+    },
+    {
+      "adult": false,
+      "backdrop_path": "/7zQJYV02yehWrQN6NjKsBorqUUS.jpg",
+      "genre_ids": [
+        28,
+        18,
+        36
+      ],
+      "id": 724495,
+      "original_language": "en",
+      "original_title": "The Woman King",
+      "overview": "The story of the Agojie, the all-female unit of warriors who protected the African Kingdom of Dahomey in the 1800s with skills and a fierceness unlike anything the world has ever seen, and General Nanisca as she trains the next generation of recruits and readies them for battle against an enemy determined to destroy their way of life.",
+      "popularity": 3173.069,
+      "poster_path": "/438QXt1E3WJWb3PqNniK0tAE5c1.jpg",
+      "release_date": "2022-09-15",
+      "title": "The Woman King",
+      "video": false,
+      "vote_average": 7.9,
+      "vote_count": 662
+    }
+  ],
+  "total_pages": 36240,
+  "total_results": 724783
+}

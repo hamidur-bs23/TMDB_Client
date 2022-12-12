@@ -3,13 +3,16 @@ import { CommonModule } from '@angular/common';
 
 import { PopularRoutingModule } from './popular-routing.module';
 import { PopularComponent } from './popular.component';
-import {PopularMovieApiService} from "../services/popular-movie.api.service";
+import {PopularMovieApiService} from "./services/popular-movie.api.service";
 import {SharedModule} from "../../../shared/shared.module";
+import {MovieCardComponent} from "../components/movie-card/movie-card.component";
 
 
 @NgModule({
   declarations: [
-    PopularComponent
+    PopularComponent,
+    MovieCardComponent,
+
   ],
   imports: [
     CommonModule,

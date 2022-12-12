@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {environment} from "../../../../environments/environment";
-import {PopularMovie, PopularMovieResponse} from "../models/movie.model";
+import {environment} from "../../../../../environments/environment";
+import {PopularMovie, PopularMovieResponse} from "../../models/movie.model";
 import {Observable} from "rxjs";
 
 @Injectable({
@@ -15,4 +15,6 @@ export class PopularMovieApiService {
     const url = `${environment.api_tmdb_auth.api_base_url}/3/movie/popular?api_key=${environment.api_tmdb_auth.api_key}&language=en-US&page=1`;
     return this.httpClient.get<PopularMovieResponse>(url);
   }
+
+  // https://image.tmdb.org/t/p/w500//pFlaoHTZeyNkG83vxsAJiGzfSsa.jpg
 }
