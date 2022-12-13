@@ -1,4 +1,6 @@
 export const environment = {
+  production: false,
+
   api_tmdb_auth: {
     api_base_url: 'https://api.themoviedb.org',
     api_read_access_token:

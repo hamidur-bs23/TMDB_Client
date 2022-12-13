@@ -1,9 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { SampleService } from './sample.service';
-import { map, tap } from 'rxjs';
-import { AuthService } from './core/auth/services/auth.service';
-import { ICreateSessionResponse } from './core/auth/models/models';
-import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -15,7 +10,7 @@ export class AppComponent implements OnInit {
 
   sampleData: any;
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor() {}
 
   ngOnInit(): void {}
 }

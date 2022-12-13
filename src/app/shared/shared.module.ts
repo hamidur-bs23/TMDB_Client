@@ -1,13 +1,13 @@
-import {NgModule} from '@angular/core';
-import {CommonModule} from '@angular/common';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {AuthenticatedUserComponent} from './components/authenticated-user/authenticated-user.component';
-import {MaterialModule} from "./material.module";
-import {HeaderComponent} from "./components/header/header.component";
-import {FooterComponent} from "./components/footer/footer.component";
-import {RouterLink, RouterLinkActive, RouterOutlet} from "@angular/router";
-import {MenuItemComponent} from "./components/menu-item/menu-item.component";
-import {PageHeaderComponent} from "./components/page-header/page-header.component";
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { AuthenticatedUserComponent } from './components/authenticated-user/authenticated-user.component';
+import { MaterialModule } from './material.module';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { MenuItemComponent } from './components/menu-item/menu-item.component';
+import { PageHeaderComponent } from './components/page-header/page-header.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +16,6 @@ import {PageHeaderComponent} from "./components/page-header/page-header.componen
     FooterComponent,
     MenuItemComponent,
     PageHeaderComponent,
-
   ],
   imports: [
     CommonModule,
@@ -26,8 +25,6 @@ import {PageHeaderComponent} from "./components/page-header/page-header.componen
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
-
-
   ],
   exports: [
     //Modules
@@ -42,8 +39,6 @@ import {PageHeaderComponent} from "./components/page-header/page-header.componen
     FooterComponent,
     MenuItemComponent,
     PageHeaderComponent,
-
-  ]
+  ],
 })
-export class SharedModule {
-}
+export class SharedModule {}

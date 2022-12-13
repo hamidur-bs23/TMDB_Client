@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../../../environments/environment';
 import { HttpClient } from '@angular/common/http';
-import { EMPTY, map, of, switchMap, tap } from 'rxjs';
+import { map, of, switchMap } from 'rxjs';
 import {
   IAuthRequestTokenResponse,
   ICreateSessionResponse,
@@ -24,8 +24,7 @@ export class AuthService {
   }
 
   getApiReadAccessToken() {
-    const token = environment.api_tmdb_auth.api_read_access_token;
-    return token;
+    return environment.api_tmdb_auth.api_read_access_token;
   }
 
   Login() {
@@ -36,7 +35,7 @@ export class AuthService {
           requestToken.request_token,
           `${environment.api_tmdb_auth.redirect_to_url}`
         ).pipe(
-          switchMap((response) => {
+          switchMap(() => {
             return this.CreateSession();
           })
         );
@@ -84,7 +83,7 @@ export class AuthService {
     return this.httpClient.post<ICreateSessionResponse>(url, body).pipe(
       map((response) => {
         debugger;
-        if (response.success){
+        if (response.success) {
           console.log(response);
           localStorage.setItem('user-session-id', response.session_id);
         }

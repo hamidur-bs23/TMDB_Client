@@ -6,6 +6,16 @@ export const popularMovieFeature = createFeature({
   name: 'PopularMovie',
   reducer: createReducer<PopularMovieState>(
     initialPopularMovieState,
+    on(PopularMovieActions.addpopularmovies, (state, action) => {
+      state = {
+        ...state,
+        movies: action.payloads.results,
+        currentPageIndex: action.payloads.page,
+        totalItemCount: action.payloads.total_results,
+        totalPageNumber: action.payloads.total_pages,
+      };
+      return state;
+    }),
     on(PopularMovieActions.test, (state) => {
       return { ...state };
     }),
@@ -18,8 +28,8 @@ export const popularMovieFeature = createFeature({
     on(PopularMovieActions.testwithpropsfactory, (state, action) => {
       console.log(action?.queryString);
       return {
-        ...state
+        ...state,
       };
-    }),
+    })
   ),
 });

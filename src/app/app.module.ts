@@ -1,34 +1,36 @@
-import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
 
-import {AppRoutingModule} from './app-routing.module';
-import {AppComponent} from './app.component';
-import {AuthInterceptorService} from './core/auth/interceptors/auth.interceptor';
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {SharedModule} from "./shared/shared.module";
-import {DefaultLayoutComponent} from './layout/default/default.layout.component';
-import {FullwidthLayoutComponent} from './layout/fullwidth/fullwidth.layout.component';
-import {AppStoreModule} from "./store/app.store.module";
+import { AppRoutingModule } from './app-routing.module';
+import { AppComponent } from './app.component';
+import { AuthInterceptorService } from './core/auth/interceptors/auth.interceptor';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { SharedModule } from './shared/shared.module';
+import { DefaultLayoutComponent } from './layout/default/default.layout.component';
+import { FullwidthLayoutComponent } from './layout/fullwidth/fullwidth.layout.component';
 import { StoreModule } from '@ngrx/store';
+import { EffectsModule } from '@ngrx/effects';
+import { environment } from '../environments/environment';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 @NgModule({
   declarations: [
     AppComponent,
     DefaultLayoutComponent,
     FullwidthLayoutComponent,
-
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     BrowserAnimationsModule,
     SharedModule,
-    AppStoreModule,
+
+    StoreModule.forRoot({}),
+    EffectsModule.forRoot([]),
+    environment.production ? StoreDevtoolsModule.instrument({}) : [],
 
     AppRoutingModule,
-
-    StoreModule.forRoot({}, {}),
   ],
   providers: [
     {
@@ -39,5 +41,4 @@ import { StoreModule } from '@ngrx/store';
   ],
   bootstrap: [AppComponent],
 })
-export class AppModule {
-}
+export class AppModule {}

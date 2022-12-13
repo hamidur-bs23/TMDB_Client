@@ -1,5 +1,5 @@
-import {ChangeDetectionStrategy, Component} from '@angular/core';
-import {Menu} from "../../shared/models/menu-item.model";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { Menu } from '../../shared/models/menu-item.model';
 
 @Component({
   selector: 'app-default',
@@ -38,7 +38,7 @@ export class DefaultLayoutComponent {
       title: 'Test',
       icon: 'star',
       link: '/test',
-      color: 'primary'
+      color: 'primary',
     },
   ];
 }

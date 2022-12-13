@@ -12,7 +12,7 @@ export class AuthenticatedUserComponent implements OnInit, OnDestroy {
   _isApproved: boolean = false;
   _requestToken: string = '';
 
-  constructor(private activatedRoute: ActivatedRoute, private router: Router) {}
+  constructor(private activatedRoute: ActivatedRoute) {}
 
   ngOnInit(): void {
     this.activatedRoute.queryParams
@@ -20,7 +20,7 @@ export class AuthenticatedUserComponent implements OnInit, OnDestroy {
       .subscribe((queryParams) => {
         debugger;
         this._requestToken = queryParams['request_token'];
-        this._isApproved = queryParams['approved'] ? true : false;
+        this._isApproved = !!queryParams['approved'];
         console.log(queryParams);
       });
   }

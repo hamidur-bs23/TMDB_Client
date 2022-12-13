@@ -4,11 +4,7 @@
     {
       "adult": false,
       "backdrop_path": "/bQXAqRx2Fgc46uCVWgoPz5L5Dtr.jpg",
-      "genre_ids": [
-        28,
-        14,
-        878
-      ],
+      "genre_ids": [28, 14, 878],
       "id": 436270,
       "original_language": "en",
       "original_title": "Black Adam",
@@ -24,11 +20,7 @@
     {
       "adult": false,
       "backdrop_path": "/7zQJYV02yehWrQN6NjKsBorqUUS.jpg",
-      "genre_ids": [
-        28,
-        18,
-        36
-      ],
+      "genre_ids": [28, 18, 36],
       "id": 724495,
       "original_language": "en",
       "original_title": "The Woman King",

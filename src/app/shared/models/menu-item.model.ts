@@ -10,5 +10,4 @@ export interface MenuItem {
   subMenu?: MenuItem[];
 }
 
-
 export type Menu = MenuItem[];

@@ -6,9 +6,10 @@
         *ngIf="item.title"
         [routerLink]="item.link"
         routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: true }">
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
         <div class="flex">
-          <mat-icon [style.color]="item.color ? item.color : ''" mat-list-icon>
+          <mat-icon mat-list-icon [style.color]="item.color ? item.color : ''">
             {{ item.icon }}
           </mat-icon>
           <span mat-line class="list-item">{{ item.title }}</span>
@@ -21,7 +22,10 @@
       <mat-expansion-panel [expanded]="item.expanded">
         <mat-expansion-panel-header>
           <mat-panel-title class="d-flex align-items-center">
-            <mat-icon [style.color]="item.color ? item.color : ''" mat-list-icon>
+            <mat-icon
+              [style.color]="item.color ? item.color : ''"
+              mat-list-icon
+            >
               {{ item.icon }}
             </mat-icon>
             <span mat-line class="list-item">{{ item.title }}</span>

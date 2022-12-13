@@ -1,10 +1,10 @@
-import {PopularMovie} from "../../models/movie.model";
+import { PopularMovie } from '../../models/movie.model';
 
 export interface PopularMovieState {
-  movies: PopularMovie[] | any[],
-  totalItemCount: number,
-  currentPageIndex: number,
-  totalPageNumber: number,
+  movies: PopularMovie[] | any[];
+  totalItemCount: number;
+  currentPageIndex: number;
+  totalPageNumber: number;
 }
 
 export const initialPopularMovieState: PopularMovieState = {
@@ -12,4 +12,4 @@ export const initialPopularMovieState: PopularMovieState = {
   totalItemCount: 0,
   currentPageIndex: 0,
   totalPageNumber: 0,
-}
+};
