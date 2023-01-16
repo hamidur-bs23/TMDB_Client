@@ -30,8 +30,8 @@ const routes: Routes = [
           {
             path: 'popular',
             loadChildren: () =>
-              import('./modules/movies/popular/popular.module').then(
-                (m) => m.PopularModule
+              import('./modules/movies/popular/popular-movie.module').then(
+                (m) => m.PopularMovieModule
               ),
           },
         ],

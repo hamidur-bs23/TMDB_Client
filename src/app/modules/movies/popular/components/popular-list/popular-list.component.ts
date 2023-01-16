@@ -1,15 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { PopularMovie } from '../models/movie.model';
+import { PopularMovie } from '../../../models/movie.model';
 import { Store } from '@ngrx/store';
-import { PopularMovieState } from './store/popular.state';
-import { PopularStoreService } from './store/popular.store.service';
+import { PopularMovieState } from '../../store/popular.state';
+import { PopularStoreService } from '../../store/popular.store.service';
 
 @Component({
   selector: 'app-popular',
-  templateUrl: './popular.component.html',
-  styleUrls: ['./popular.component.scss'],
+  templateUrl: './popular-list.component.html',
+  styleUrls: ['./popular-list.component.scss'],
 })
-export class PopularComponent implements OnInit {
+export class PopularListComponent implements OnInit {
   movies: PopularMovie[] = [];
   currentPageIndex: number = 0;
   totalPageNumber: number = 0;
