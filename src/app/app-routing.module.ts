@@ -36,6 +36,15 @@ const routes: Routes = [
           },
         ],
       },
+      {
+        path: 'user',
+        children: [
+          {
+            path: 'sign-up',
+            loadChildren: ()=>import('./modules/auth/signup/signup-routing.module').then(m=>m.SignupRoutingModule)
+          }
+        ]
+      }
     ],
   },
   {

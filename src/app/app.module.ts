@@ -16,6 +16,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import {AppCustomRouterSerializer} from "./store/router/appCustomRouterSerializer";
 import {AppStoreReducers} from "./store/app.store.reducers";
+import {AuthModule} from "./modules/auth/auth.module";
 
 @NgModule({
   declarations: [
@@ -37,6 +38,8 @@ import {AppStoreReducers} from "./store/app.store.reducers";
     }),
     // environment.production ? StoreDevtoolsModule.instrument({}) : [],
     StoreDevtoolsModule.instrument({}),
+
+    AuthModule,
     AppRoutingModule,
   ],
   providers: [
