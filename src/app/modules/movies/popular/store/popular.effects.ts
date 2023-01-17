@@ -19,7 +19,6 @@ export class PopularMovieEffects {
       mergeMap(() => {
         return this.popularMovieApiService.loadPopularMovies().pipe(
           map((response: PopularMovieResponse) => {
-            debugger;
             console.log(response);
             return PopularMovieActions.addpopularmovies({ payloads: response });
           }),

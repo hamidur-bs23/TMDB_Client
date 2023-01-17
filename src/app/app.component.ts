@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {IAppState} from "./store/app.store.state";
+import {Store} from "@ngrx/store";
+import {tap} from "rxjs";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +13,13 @@ export class AppComponent implements OnInit {
 
   sampleData: any;
 
-  constructor() {}
+  constructor(
+    private store: Store<IAppState>
+  ) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.pipe(
+      tap(tap => console.log(tap))
+    );
+  }
 }

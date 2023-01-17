@@ -24,17 +24,14 @@ export class HomeComponent {
   }
 
   onCreateRequestToken() {
-    debugger;
     this.authService.CreateRequestToken();
   }
 
   onCreateSession() {
-    debugger;
     this.authService.CreateSession();
   }
 
   onCreateSessionWithUserCredential() {
-    debugger;
     this.authService.CreateSessionWithUserCredentials(
       'hamidpioneer',
       'Hamid@22152215'
@@ -42,7 +39,6 @@ export class HomeComponent {
   }
 
   onLogout() {
-    debugger;
     // TODO: subscription =
     this.authService.Logout().subscribe((response) => {
       if (response) {
@@ -59,7 +55,6 @@ export class HomeComponent {
       .Login()
       .pipe(map((data) => data))
       .subscribe((isAuthenticated) => {
-        debugger;
         if (isAuthenticated) {
           console.log('Logging success!');
         } else {

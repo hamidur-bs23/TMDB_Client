@@ -67,7 +67,6 @@ export class AuthService {
 
   // ver: 3
   CreateSession() {
-    debugger;
     const url: string = `${
       environment.api_tmdb_auth.api_base_url
     }/3/authentication/session/new?api_key=${this.getApiKey()}`;
@@ -82,7 +81,6 @@ export class AuthService {
 
     return this.httpClient.post<ICreateSessionResponse>(url, body).pipe(
       map((response) => {
-        debugger;
         if (response.success) {
           console.log(response);
           localStorage.setItem('user-session-id', response.session_id);
@@ -108,7 +106,6 @@ export class AuthService {
 
     this.httpClient.post<IAuthRequestTokenResponse>(url, body).pipe(
       map((response) => {
-        // debugger;
         if (response.success) {
           localStorage.setItem('user-request-token', response.request_token);
         }
@@ -119,7 +116,6 @@ export class AuthService {
 
   // ver: 3
   Logout() {
-    debugger;
     const url = `${
       environment.api_tmdb_auth.api_base_url
     }/3/authentication/session?api_key=${this.getApiKey()}`;

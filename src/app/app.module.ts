@@ -13,6 +13,9 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { environment } from '../environments/environment';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import {AppCustomRouterSerializer} from "./store/router/appCustomRouterSerializer";
+import {AppStoreReducers} from "./store/app.store.reducers";
 
 @NgModule({
   declarations: [
@@ -26,10 +29,14 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
     BrowserAnimationsModule,
     SharedModule,
 
-    StoreModule.forRoot({}),
+    StoreModule.forRoot(AppStoreReducers),
     EffectsModule.forRoot([]),
-    environment.production ? StoreDevtoolsModule.instrument({}) : [],
-
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+      serializer: AppCustomRouterSerializer,
+    }),
+    // environment.production ? StoreDevtoolsModule.instrument({}) : [],
+    StoreDevtoolsModule.instrument({}),
     AppRoutingModule,
   ],
   providers: [

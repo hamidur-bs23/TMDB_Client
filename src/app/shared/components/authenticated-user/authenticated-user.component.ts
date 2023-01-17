@@ -18,7 +18,6 @@ export class AuthenticatedUserComponent implements OnInit, OnDestroy {
     this.activatedRoute.queryParams
       .pipe(takeUntil(this.destroy$))
       .subscribe((queryParams) => {
-        debugger;
         this._requestToken = queryParams['request_token'];
         this._isApproved = !!queryParams['approved'];
         console.log(queryParams);
