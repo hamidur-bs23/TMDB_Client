@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {IAppState} from "./store/app.store.state";
+import {AppState} from "./store/app.store.state";
 import {Store} from "@ngrx/store";
 import {tap} from "rxjs";
 
@@ -14,7 +14,7 @@ export class AppComponent implements OnInit {
   sampleData: any;
 
   constructor(
-    private store: Store<IAppState>
+    private store: Store<AppState>
   ) {}
 
   ngOnInit(): void {

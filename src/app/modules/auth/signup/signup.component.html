@@ -1,1 +1,117 @@
-<p>signup works!</p>
+<!--<form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="">-->
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <mat-label>Name</mat-label>-->
+<!--    <input type="text" matInput formControlName="name" placeholder="Enter your full name">-->
+<!--    <mat-hint>Name</mat-hint>-->
+<!--    <mat-error *ngIf="signupForm.hasError('name') && !signupForm.hasError('required')">-->
+<!--      Please enter valid full name-->
+<!--    </mat-error>-->
+<!--    <mat-error *ngIf="signupForm.hasError('required')">-->
+<!--      Name is <strong>required</strong>-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <mat-label>Email</mat-label>-->
+<!--    <input type="email" matInput formControlName="email" placeholder="Ex. pat@example.com">-->
+<!--    <mat-hint>Errors appear instantly!</mat-hint>-->
+<!--    <mat-error *ngIf="signupForm.hasError('email') && !signupForm.hasError('required')">-->
+<!--      Please enter a valid email address-->
+<!--    </mat-error>-->
+<!--    <mat-error *ngIf="signupForm.hasError('required')">-->
+<!--      Email is <strong>required</strong>-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+
+<!--  <mat-form-field class="example-full-width">-->
+<!--    <mat-label>Password</mat-label>-->
+<!--    <input type="password" matInput formControlName="password" placeholder="Enter your password">-->
+<!--    <mat-hint>Enter your password</mat-hint>-->
+<!--    <mat-error *ngIf="signupForm.hasError('password') && !signupForm.hasError('required')">-->
+<!--      Please enter a valid password-->
+<!--    </mat-error>-->
+<!--    <mat-error *ngIf="signupForm.hasError('required')">-->
+<!--      Email is <strong>required</strong>-->
+<!--    </mat-error>-->
+<!--  </mat-form-field>-->
+
+<!--  <button type="submit" [disabled]="signupForm.invalid">Sign-up</button>-->
+<!--</form>-->
+
+
+<div class="flex min-h-full items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+  <div class="w-full max-w-md space-y-8">
+    <div>
+      <img class="mx-auto h-12 w-auto"
+           src="https://www.themoviedb.org/assets/2/v4/logos/v2/blue_long_2-9665a76b1ae401a510ec1e0ca40ddcb3b0cfe45f1d51b77a308fea0845885648.svg"
+           alt="Your Company">
+      <h2 class="mt-6 text-center text-3xl font-bold tracking-tight text-gray-900">Sign in to your account</h2>
+    </div>
+    <form class="mt-8 space-y-6" [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+<!--      <input type="hidden" name="remember" value="true">-->
+      <div class="-space-y-px rounded-md shadow-sm">
+
+        <!--        Name-->
+        <div>
+          <label for="name" class="sr-only">Name</label>
+          <input name="name"
+                 id="name"
+                 formControlName="name"
+                 type="text"
+                 class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                 placeholder="Your name">
+        </div>
+
+        <!--        Email-->
+        <div>
+          <label for="email" class="sr-only">Email address</label>
+          <input name="email"
+                 id="email"
+                 formControlName="email"
+                 type="email"
+                 autocomplete="email"
+                 class="relative block w-full appearance-none rounded-none rounded-t-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                 placeholder="Email address">
+        </div>
+
+        <!--        Password-->
+        <div>
+          <label for="password" class="sr-only">Password</label>
+          <input name="password"
+                 id="password"
+                 formControlName="password"
+                 type="password"
+                 autocomplete="current-password"
+                 class="relative block w-full appearance-none rounded-none rounded-b-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-500 focus:z-10 focus:border-indigo-500 focus:outline-none focus:ring-indigo-500 sm:text-sm"
+                 placeholder="Password">
+        </div>
+      </div>
+
+<!--      <div class="flex items-center justify-between">-->
+<!--        <div class="flex items-center">-->
+<!--          <input id="remember-me" name="remember-me" type="checkbox"-->
+<!--                 class="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500">-->
+<!--          <label for="remember-me" class="ml-2 block text-sm text-gray-900">Remember me</label>-->
+<!--        </div>-->
+
+<!--        <div class="text-sm">-->
+<!--          <a href="#" class="font-medium text-indigo-600 hover:text-indigo-500">Forgot your password?</a>-->
+<!--        </div>-->
+<!--      </div>-->
+
+<!--      Call to actions-->
+      <div>
+        <button type="submit"
+                [disabled]="signupForm.invalid"
+                class="group relative flex w-full justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:opacity-50">
+          <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+          </span>
+          Sign up
+        </button>
+      </div>
+
+      {{ signupForm.value | json }}
+    </form>
+  </div>
+</div>

@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { map } from 'rxjs';
 import { AuthService } from '../../../../core/auth/services/auth.service';
 import { SampleService } from '../../../../sample.service';
+import {UserSignup} from "../../../auth/models/user";
 
 @Component({
   selector: 'app-home',
@@ -61,5 +62,9 @@ export class HomeComponent {
           console.log('Logging failed!');
         }
       });
+  }
+
+  setToLocalStorage(data: UserSignup){
+
   }
 }

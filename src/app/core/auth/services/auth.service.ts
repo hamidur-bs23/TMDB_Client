@@ -8,6 +8,7 @@ import {
   ICreateSessionWithLoginCredentialsRequest,
   ILogoutSessionResponse,
 } from '../models/models';
+import {UserSignup} from "../../../modules/auth/models/user";
 
 @Injectable({
   providedIn: 'root',
@@ -60,7 +61,8 @@ export class AuthService {
   AuthorizeUserRequestToken(requestToken: string, redirect_to_url: string) {
     let url: string = `${environment.api_tmdb_auth.authorize_user_base_url}/${requestToken}?redirect_to=${redirect_to_url}`;
 
-    window.open(url, '_blank');
+    // window.open(url, '_blank');
+    window.open(url, '_self');
 
     return of(true);
   }
@@ -70,6 +72,31 @@ export class AuthService {
     const url: string = `${
       environment.api_tmdb_auth.api_base_url
     }/3/authentication/session/new?api_key=${this.getApiKey()}`;
+    const requestToken: string =
+      localStorage.getItem('user-request-token') ?? '';
+
+    if (requestToken.trim().length <= 0) {
+      return of(false);
+    }
+
+    const body = { request_token: `${requestToken}` };
+
+    return this.httpClient.post<ICreateSessionResponse>(url, body).pipe(
+      map((response) => {
+        if (response.success) {
+          console.log(response);
+          localStorage.setItem('user-session-id', response.session_id);
+        }
+        return response.success;
+      })
+    );
+  }
+
+  // ver: 3
+  CreateGuestSession() {
+    const url: string = `${
+      environment.api_tmdb_auth.api_base_url
+    }/3/authentication/guest_session/new?api_key=${this.getApiKey()}`;
     const requestToken: string =
       localStorage.getItem('user-request-token') ?? '';
 
@@ -134,5 +161,18 @@ export class AuthService {
     } else {
       return of(false);
     }
+  }
+
+  setToLocal(data: UserSignup) {
+    const name = 'user-signup-info';
+
+    let valueStr = JSON.stringify(data);
+    if (valueStr === undefined) valueStr = '';
+
+    localStorage.setItem(name, valueStr);
+  }
+
+  getFromLocal(name: string) {
+    return localStorage.getItem(name) ?? '';
   }
 }

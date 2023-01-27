@@ -6,7 +6,7 @@
 
   <span class="spacer"></span>
 
-  <span class="welcome-text">Hello {{ user }}</span>
+  <span *ngIf="isAuthenticated" class="welcome-text">Hello {{ user.name }}</span>
 
   <button mat-icon-button [matMenuTriggerFor]="menu" class="flex ml-1">
     <mat-icon>person_pin</mat-icon>

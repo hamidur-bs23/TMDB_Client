@@ -9,6 +9,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatCardModule } from '@angular/material/card';
 import { MatButtonModule } from '@angular/material/button';
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatInputModule} from "@angular/material/input";
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 @NgModule({
   declarations: [],
@@ -23,6 +26,10 @@ import { MatButtonModule } from '@angular/material/button';
     MatExpansionModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+
   ],
   exports: [
     MatSlideToggleModule,
@@ -34,6 +41,11 @@ import { MatButtonModule } from '@angular/material/button';
     MatExpansionModule,
     MatCardModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatCheckboxModule,
+
+
   ],
 })
 export class MaterialModule {}

@@ -37,11 +37,11 @@ const routes: Routes = [
         ],
       },
       {
-        path: 'user',
+        path: 'auth',
         children: [
           {
-            path: 'sign-up',
-            loadChildren: ()=>import('./modules/auth/signup/signup-routing.module').then(m=>m.SignupRoutingModule)
+            path: '',
+            loadChildren: ()=>import('./modules/auth/auth.module').then(m=>m.AuthModule),
           }
         ]
       }

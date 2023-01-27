@@ -26,9 +26,8 @@ import {AuthModule} from "./modules/auth/auth.module";
   ],
   imports: [
     BrowserModule,
-    HttpClientModule,
     BrowserAnimationsModule,
-    SharedModule,
+    HttpClientModule,
 
     StoreModule.forRoot(AppStoreReducers),
     EffectsModule.forRoot([]),
@@ -39,8 +38,10 @@ import {AuthModule} from "./modules/auth/auth.module";
     // environment.production ? StoreDevtoolsModule.instrument({}) : [],
     StoreDevtoolsModule.instrument({}),
 
-    AuthModule,
     AppRoutingModule,
+    AuthModule,
+    SharedModule,
+
   ],
   providers: [
     {
