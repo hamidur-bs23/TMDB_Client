@@ -7,6 +7,7 @@ export const popularMovieFeature = createFeature({
   reducer: createReducer<PopularMovieState>(
     initialPopularMovieState,
     on(PopularMovieActions.addpopularmovies, (state, action) => {
+      debugger;
       state = {
         ...state,
         movies: action.payloads.results,

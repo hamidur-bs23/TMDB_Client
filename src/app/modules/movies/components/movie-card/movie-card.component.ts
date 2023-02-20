@@ -10,7 +10,7 @@ export class MovieCardComponent implements OnInit {
   @Input() movie!: PopularMovie;
 
   ngOnInit(): void {
-    console.log(this.movie);
+    // console.log(this.movie);
   }
 
   getPosterImageUrl() {

@@ -1,20 +1,31 @@
-<div>
-  <button mat-stroked-button (click)="onLoadPopularMovieWithStoreEffect()">
-    Load Data with StoreEffect
-  </button>
-  <br />
-  <button mat-stroked-button (click)="getData()">Show</button>
-</div>
+<!--<div>-->
+<!--  <button mat-stroked-button (click)="onLoadPopularMovieWithStoreEffect()">-->
+<!--    Load Data with StoreEffect-->
+<!--  </button>-->
+<!--  <br />-->
+<!--  <button mat-stroked-button (click)="getData()">Show</button>-->
+<!--</div>-->
 
-<ng-container *ngIf="movies.length > 0; else noDataBlock">
-  <p>Count: {{ movies.length | json }}</p>
+<!--<ng-container *ngIf="movies.length > 0; else noDataBlock">-->
+<!--  <p>Count: {{ movies.length | json }}</p>-->
+<!--  <div class="flex flex-row flex-wrap gap-4">-->
+<!--    <app-movie-card-->
+<!--      *ngFor="let movie of movies"-->
+<!--      [movie]="movie"-->
+<!--    ></app-movie-card>-->
+<!--  </div>-->
+<!--</ng-container>-->
+<!--<ng-template #noDataBlock>-->
+<!--  <p>No data</p>-->
+<!--</ng-template>-->
+
+<div>
+  <p>Count: {{ movies.length }}</p>
   <div class="flex flex-row flex-wrap gap-4">
     <app-movie-card
       *ngFor="let movie of movies"
       [movie]="movie"
     ></app-movie-card>
   </div>
-</ng-container>
-<ng-template #noDataBlock>
-  <p>No data</p>
-</ng-template>
+</div>
+
